@@ -1,0 +1,14 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.header {
+  width: 100%;
+  height: 4.266666666666667rem;
+  background-color: #fa002f;
+}
+.text {
+  width: 98%;
+  font-size: 0.256rem;
+}
