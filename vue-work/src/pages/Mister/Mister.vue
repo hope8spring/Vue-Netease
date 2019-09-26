@@ -1,15 +1,14 @@
 <template>
   <div class="Mister">
     <!--首页头部-->
-    <div class="header">
-      <img class="header-img" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
+    <div class="headerB">
+    <div class="hea">
+      <img class="header-img" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" >
       <form action="/"  >
         <van-search
           v-model="value"
           placeholder="请输入搜索关键词"
           show-action
-          @search="onSearch"
-          @cancel="onCancel"
           show-action:true
 
         />
@@ -19,23 +18,22 @@
     </div>
     <!--标签页-->
     <Taber></Taber>
-
+    </div>
     <!--轮播图-->
     <van-swipe :autoplay="3000" indicator-color="white" class="swipe-img">
-      <van-swipe-item>
-        <img src="https://yanxuan.nosdn.127.net/7d874fbc2320cd2ea8c124b61a75b15c.jpg?imageView&quality=75&thumbnail=750x0" alt="">
+      <van-swipe-item v-for="ban in banData">
+        <img :src="ban.bg" class="banDataImg">
       </van-swipe-item>
-      <van-swipe-item>
-        <img src="https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg?imageView&quality=75&thumbnail=750x0" alt="">
-      </van-swipe-item>
-      <van-swipe-item>
-        <img src="https://yanxuan.nosdn.127.net/a412dcf435135e294edbcad885786060.jpg?imageView&quality=75&thumbnail=750x0" alt="">
-      </van-swipe-item>
-      <van-swipe-item>
-        <img src="https://yanxuan.nosdn.127.net/dcde0a26e79861fe54baee8ddeab2053.jpg?imageView&quality=75&thumbnail=750x0" alt="">
-      </van-swipe-item>
-
     </van-swipe>
+    <!-- 小标签页-->
+    <div class="desc">
+      <div>
+        <i class="icon">
+        </i>
+        <span class="text">{{policy.desc}}</span>
+      </div>
+
+    </div>
     <!--底部路由-->
     <Footer></Footer>
   </div>
@@ -46,12 +44,15 @@
   import { Search,Swipe, SwipeItem,} from 'vant';
   import Taber from '../../components/Taber/Tab'
   import Footer from '../../components/Footer/Footer'
+
+  import axios from 'axios'
   export default {
     name: "Mister",
    data(){
       return{
         value:'请输入搜索关键词',
-
+        banData:[],
+        policy:[]
       }
    },
     components:{
@@ -60,7 +61,14 @@
       [SwipeItem.name]:SwipeItem,
       Taber,
       Footer
-  }
+  },
+    async created(){
+      const a = await axios.get("/ban");
+      this.banData =a.data.data;
+      const b = await axios.get("/policyDescList");
+      this.policy=b.data.data
+
+    }
 
   }
 </script>
@@ -68,35 +76,57 @@
   @import '../../common/stylus.styl';
 
   .Mister
-    .header
-      display flex
-      padding rem(16) rem(30)
-      align-items center
-      justify-content center
-      .search
-        width rem(442)
-        height rem(56)
-        background #ed0048
-        color #660c0b
-        border-radius rem(10)
-      header-img
-        width  rem(138)
-        height rem(40)
-        margin-right rem(20)
-        display inline-block
-      .btn
-        font-size rem(24)
-        background-color transparent
-        outline none
-        border #fa002f rem(1) solid
-        color darkred
-        width rem(74)
-        height rem(40)
-        border-radius rem(10)
-
-
+    .headerB
+      margin  rem(2) rem(0) rem(2) rem(16)
+      .hea
+        display flex
+        padding rem(16) rem(30)
+        align-items center
+        justify-content center
+        .search
+          width rem(442)
+          height rem(56)
+          background #ed0048
+          color #660c0b
+          border-radius rem(10)
+        header-img
+          width  rem(138)
+          height rem(40)
+          margin-right rem(20)
+          display inline-block
+        .btn
+          font-size rem(24)
+          background-color transparent
+          outline none
+          border #fa002f rem(1) solid
+          color darkred
+          width rem(74)
+          height rem(40)
+          border-radius rem(10)
     .swipe-img
       text-align center
+      width rem(750)
+      height rem(370)
+      .banDataImg
+        width rem(750)
+        height rem(370)
+    .desc
+      width rem(750)
+      font-size rem(25)
+      display flex
+      justify-content center
+      .icon
+        width rem(20)
+        height rem(20)
+      .text
+        display inline-block
+        margin rem(20)
+
+
+
+
+
+
 
 
 </style>
