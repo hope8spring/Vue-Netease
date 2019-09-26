@@ -1,0 +1,86 @@
+{
+  "id": "1332200",
+  "name": "项目构建",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1356587",
+      "name": "笑脸",
+      "font_class": "xiaolian-",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "1840047",
+      "name": "哭-1",
+      "font_class": "ku-",
+      "unicode": "e6e3",
+      "unicode_decimal": 59107
+    },
+    {
+      "icon_id": "3217799",
+      "name": "分类",
+      "font_class": "icon-",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "3745058",
+      "name": "笑脸",
+      "font_class": "icon-test",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "4183414",
+      "name": "AK-FK英文模式",
+      "font_class": "fk_yingwenmoshi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "4485645",
+      "name": "个人",
+      "font_class": "geren",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "4933341",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "5122042",
+      "name": "发现",
+      "font_class": "faxian-",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "7116483",
+      "name": "笑脸",
+      "font_class": "xiaolian",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "7127391",
+      "name": "x",
+      "font_class": "x",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "7781935",
+      "name": "化妆水",
+      "font_class": "huazhuangshui",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    }
+  ]
+}

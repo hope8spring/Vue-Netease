@@ -3,11 +3,23 @@
     <!--首页头部-->
     <div class="header">
       <img class="header-img" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
-      <van-search placeholder="请输入搜索关键词" v-model="value" class="search" ></van-search>
+      <form action="/"  >
+        <van-search
+          v-model="value"
+          placeholder="请输入搜索关键词"
+          show-action
+          @search="onSearch"
+          @cancel="onCancel"
+          show-action:true
+
+        />
+      </form>
+      <!--<van-search placeholder="请输入搜索关键词" v-model="value" class="search" ></van-search>-->
       <button class="btn">登录</button>
     </div>
     <!--标签页-->
     <Taber></Taber>
+
     <!--轮播图-->
     <van-swipe :autoplay="3000" indicator-color="white" class="swipe-img">
       <van-swipe-item>
@@ -24,7 +36,8 @@
       </van-swipe-item>
 
     </van-swipe>
-
+    <!--底部路由-->
+    <Footer></Footer>
   </div>
 </template>
 
@@ -32,18 +45,21 @@
 <script>
   import { Search,Swipe, SwipeItem,} from 'vant';
   import Taber from '../../components/Taber/Tab'
+  import Footer from '../../components/Footer/Footer'
   export default {
     name: "Mister",
    data(){
       return{
         value:'请输入搜索关键词',
+
       }
    },
     components:{
       [Search.name]:Search,
       [Swipe.name]:Swipe,
       [SwipeItem.name]:SwipeItem,
-      Taber
+      Taber,
+      Footer
   }
 
   }
