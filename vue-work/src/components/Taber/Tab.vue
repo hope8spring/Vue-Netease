@@ -50,15 +50,13 @@
     font-size rem(30)
     display inline-block
     right rem(0)
-    top rem(160)
+    top rem(110)
     .back
       width rem(120)
       height rem(50)
       background-color #fff
       opacity 1
       display inline-block
-      position relative
-      line-grid create
     .icon-img
       text-align center
       position absolute
