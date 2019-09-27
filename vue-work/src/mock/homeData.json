@@ -7,6 +7,66 @@
     {"bg": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg"},
     {"bg": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg"}
     ],
+  "swipeSlide": [
+    {
+      "liA": [
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        }
+      ]
+    },
+    {
+      "liB": [
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        },
+        {
+          "lide": "https://yanxuan.nosdn.127.net/a94a7fe5ae37149aa304144c87dc3188.jpg",
+          "text": "新品首发"
+
+        }
+      ]
+    }
+  ],
   "policyDescList": [
     {
       "icon": "http://yanxuan.nosdn.127.net/cae45612b8aae577d8bd73338e2fc02c.png",

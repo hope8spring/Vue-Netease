@@ -2,14 +2,14 @@
   <div>
     <!--标签页-->
     <van-tabs  class="tabs" swipeable v-model="active" animated sticky title-active-color="#B4282D" >
-      <van-tab title="推荐" to="/Mister" ></van-tab>
-      <van-tab title="居家生活" to="/Lister"></van-tab>
-      <van-tab title="服饰鞋包" to="/Discover"></van-tab>
-      <van-tab title="美食酒水" to="/Car"></van-tab>
-      <van-tab title="美食酒水" to="/Car"></van-tab>
-      <van-tab title="美食酒水" to="/Car"></van-tab>
-      <van-tab title="美食酒水" to="/Car"></van-tab>
-      <van-tab title="美食酒水" to="/Car"></van-tab>
+      <van-tab title="推荐" to="/Mister"  class="tabsB" ></van-tab>
+      <van-tab title="居家生活" to="/Lister" class="tabsB"></van-tab>
+      <van-tab title="服饰鞋包" to="/Discover" class="tabsB"></van-tab>
+      <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
+      <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
+      <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
+      <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
+      <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
     </van-tabs>
     <i class="icon">
       <span class="back"></span>
@@ -42,7 +42,8 @@
 @import "../../common/stylus.styl"
   .van-tab
     position relative
-    padding rem(10)
+    width rem (750)
+    height rem(60)
   .icon
     position absolute
     text-align center
