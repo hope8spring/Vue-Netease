@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5">
+  <!--viewport 只能设置布局视口大小
+      width指的就是布局视口宽度,device-width指的是设备独立像素宽度
+      initial-scale=设备独立像素宽度/布局视口宽度
+      -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+  <link rel="stylesheet" href="stylus/index.css">
+</head>
+<body>
+<img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
+    <script>
+      var width=document.documentElement.clientWidth;
+      var size=width/106;
+      var styleNode=document.createElement('style');
+      styleNode.innerHTML="html{font-size:"+size+"px}";
+      document.head.appendChild(styleNode);
+    </script>
+</body>
+</html>
