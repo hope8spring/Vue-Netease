@@ -8,3 +8,19 @@ clearFix()
     display overflow
     clear  both
 
+border-1px($color)
+  &::after
+     content''
+     display block
+     width rem(750)
+     height rem(1)
+     background $color
+     position relative
+     @media screen and (-webkit-device-pixel-raxio:2)
+       transform scaleY(.5)
+     @media screen and (-webkit-device-pixel-raxio:3)
+        transform scaleY(.33333333)
+
+
+
+

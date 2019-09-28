@@ -13,15 +13,15 @@
     <!-- 小标签页-->
     <div class="desc">
       <div class="inerDesc">
-        <img :src="policy[0].icon" class="descImg" v-if="policy[0].icon">
+        <img :src="policy[0].icon"  v-if="policy.length" class="descImg" >
         <span class="text">{{policy[0].desc}}</span>
       </div>
       <div class="inerDesc">
-          <img :src="policy[1].icon" class="descImg">
+          <img :src="policy[1].icon" v-if="policy.length" class="descImg">
          <span class="text">{{policy[1].desc}}</span>
       </div>
       <div class="inerDesc">
-          <img :src="policy[2].icon" class="descImg">
+          <img :src="policy[2].icon" v-if="policy.length" class="descImg">
           <span class="text">{{policy[2].desc}}</span>
       </div>
     </div>
@@ -78,11 +78,9 @@
     name: "Mister",
    data(){
       return{
-        value:'请输入搜索关键词',
         banData:[],
         policy:[],
         slide:[],
-        icon:''
 
       }
    },
@@ -103,9 +101,9 @@
       this.banData =banDataS.data.data;
       const policyS = await axios.get("/policyDescList");
       this.policy=policyS.data.data;
-      const slideS = await axios.get("/swipeSlide");
+    /*  const slideS = await axios.get("/swipeSlide");
       this.slide=slideS.data.data
-
+*/
     }
   }
 </script>

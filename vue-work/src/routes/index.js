@@ -9,14 +9,6 @@ export default[
   {path:'/Mister',component:Mister},
   {path:'/Lister',
     component:Lister,
-    children:[
-      {path:'/Mister',component:Mister},
-      {path:'/Lister',component:Mister},
-      {path:'/Discover',component:Mister},
-      {path:'/Car',component:Mister},
-      {path:'/Login',component:Mister},
-    ]
-
   },
   {path:'/Discover',component:Discover},
   {path:'/Car',component:Car},

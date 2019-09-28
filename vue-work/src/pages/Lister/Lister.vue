@@ -9,6 +9,7 @@
   import Left from '../../components/Lister/Left'
   export default {
     name: "Lister",
+
     components:{
       Left
     }
