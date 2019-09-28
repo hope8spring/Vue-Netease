@@ -9,29 +9,9 @@
   <div class="RightLister">
       <img  class="RightBgImg"   :src="newArr[0].bannerUrl" alt="" v-if="newArr.length"  >
       <ul class="RightContent">
-        <li class="Lister" >
-          <img  class="ListerImg" src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span class="text">明星商品</span>
-        </li>
-        <li class="Lister" >
-          <img  class="ListerImg" src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span class="text">明星商品</span>
-        </li>
-        <li class="Lister" >
-          <img  class="ListerImg" src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span class="text">明星商品</span>
-        </li>
-        <li class="Lister" >
-          <img  class="ListerImg" src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span class="text">明星商品</span>
-        </li>
-        <li class="Lister" >
-          <img  class="ListerImg" src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span class="text">明星商品</span>
-        </li>
-        <li class="Lister" >
-          <img  class="ListerImg" src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span class="text">明星商品</span>
+        <li class="Lister"  v-if="newArr[0].subCateList"  v-for="itmes in newArr[0].subCateList">
+          <img  class="ListerImg" :src="itmes.wapBannerUrl" alt="">
+          <span class="text">{{itmes.name}}</span>
         </li>
       </ul>
     </div>
@@ -58,7 +38,7 @@
           this.newArr=this.LeftList.filter((item,i)=>{
             return i===index;
           });
-        console.log(this.newArr[0]);
+        console.log(this.newArr[0].subCateList);
       },
 
     },
@@ -73,8 +53,8 @@
     async mounted(){
       const LeftLists=await axios.get("/categoryList");
       if(LeftLists.data.errno === OK){
-        this.newArr.push(LeftLists.data.category[0])
-        console.log(this.newArr);
+        this.newArr.push(LeftLists.data.category[0]);
+
         this.LeftList=LeftLists.data.category;
       }
     }
