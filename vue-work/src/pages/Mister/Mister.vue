@@ -1,24 +1,9 @@
 <template>
   <div class="Mister">
     <!--首页头部-->
-    <div class="headerB">
-    <div class="hea">
-      <img class="header-img" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" >
-      <form action="/" class="search" >
-        <van-search
-          v-model="value"
-          placeholder="请输入搜索关键词"
-          show-action
-          show-action:true
-
-        />
-      </form>
-      <!--<van-search placeholder="请输入搜索关键词" v-model="value" class="search" ></van-search>-->
-      <button class="btn">登录</button>
-    </div>
+    <headerB></headerB>
     <!--标签页-->
     <Taber></Taber>
-    </div>
     <!--轮播图-->
     <van-swipe :autoplay="3000" indicator-color="white" class="swipe-img">
       <van-swipe-item v-for="ban in banData">
@@ -28,7 +13,7 @@
     <!-- 小标签页-->
     <div class="desc">
       <div class="inerDesc">
-        <img :src="policy[0].icon" class="descImg">
+        <img :src="policy[0].icon" class="descImg" v-if="policy[0].icon">
         <span class="text">{{policy[0].desc}}</span>
       </div>
       <div class="inerDesc">
@@ -40,7 +25,6 @@
           <span class="text">{{policy[2].desc}}</span>
       </div>
     </div>
-
     <!--图片-->
     <ul class="swipe-slide">
         <li class="swipeSlideLi">
@@ -64,37 +48,31 @@
           </div>
         </li>
      </ul>
-
     <!--新人freshmanModule专享-->
     <FreshmanModule></FreshmanModule>
+
+    <!--品牌制造商直供-->
+    <Supplying></Supplying>
+
+    <!--专题精选-->
+    <Topics></Topics>
+
     <!--swiper-container-->
-    <div class="swiper-container">
-      <img  class="containerBgimg" src="https://yanxuan.nosdn.127.net/959e2edb6b5a070d8c3571967ea9a704.gif" alt="">
-      <ul class="containerContent">
-        <li class="ContentLis">
-        <div class="titleText">9.9超值专区</div>
-        <span class="text">190款商品定价直降</span>
-        <div class="LisContent">
-          <img  class="LisImgA"  src="https://yanxuan-item.nosdn.127.net/b2065eab67acc5923a8ec71167a35f6a.png?imageView&thumbnail=150x150&quality=75" alt="">
-          <img class="LisImgB"  src="https://yanxuan-item.nosdn.127.net/569ab2c87df93c56de39b8c890463242.png?imageView&thumbnail=150x150&quality=75">
-        </div>
-      </li>
-
-      </ul>
-    </div>
-
+    <swiperContainer></swiperContainer>
     <!--底部路由-->
     <Footer></Footer>
   </div>
 </template>
-
 
 <script>
   import { Search,Swipe, SwipeItem,} from 'vant';
   import Taber from '../../components/Taber/Tab'
   import Footer from '../../components/Footer/Footer'
   import FreshmanModule from '../../components/Mister/freshmanModule/FreshmanModule.vue'
-
+  import swiperContainer from '../../components/Mister/swiperContainer/swiper-container.vue'
+  import headerB from '../../components/Mister/headerB/headerB.vue'
+  import Supplying from '../../components/Mister/Supplying/Supplying.vue'
+  import Topics from '../../components/Mister/Topics/Topics.vue'
   import axios from 'axios'
   export default {
     name: "Mister",
@@ -104,6 +82,7 @@
         banData:[],
         policy:[],
         slide:[],
+        icon:''
 
       }
    },
@@ -114,6 +93,10 @@
       Taber,
       Footer,
       FreshmanModule,
+      swiperContainer,
+      headerB,
+      Supplying,
+      Topics
   },
     async created(){
       const banDataS = await axios.get("/ban");
@@ -124,7 +107,6 @@
       this.slide=slideS.data.data
 
     }
-
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
@@ -136,32 +118,6 @@
     .Mister
       width rem(750)
       /*<!--首页头部-->*/
-      .headerB
-        .hea
-          width rem(750)
-          height rem(88)
-          display flex
-          align-items center
-          justify-content center
-          .search
-            width rem(442)
-            background #ed0048
-            color #660c0b
-            border-radius rem(10)
-          header-img
-            width  rem(138)
-            height rem(40)
-            margin-right rem(20)
-            display inline-block
-          .btn
-            font-size rem(24)
-            background-color transparent
-            outline none
-            border #fa002f rem(1) solid
-            color darkred
-            width rem(74)
-            height rem(40)
-            border-radius rem(10)
       /* <!--轮播图-->*/
       .swipe-img
         text-align center
@@ -177,6 +133,8 @@
         display flex
         justify-content center
         flex 1
+        margin-bottom rem(-20)
+        margin-top rem(20)
         .inerDesc
           display flex
           width rem(228)
@@ -199,6 +157,7 @@
       .swipe-slide
         width rem(750)
         .swipeSlideLi
+          margin-bottom rem(-30)
           font-size rem(10)
           display flex
           justify-content center
@@ -225,50 +184,6 @@
                 font-size rem(24)
                 color #333
 
-
-
-
-
-
-
-
-
     /*图swiper-container片*/
-      .swiper-container
-        display inline-block
-        width rem(750)
-        .containerBgimg
-          width rem(750)
-          height rem(127)
-        .containerContent
-          width rem(750)
-          text-align center
-          .ContentLis
-            position relative
-            margin-right rem(5)
-            margin-bottom rem(5)
-            display inline-block
-            width rem(343)
-            height rem(264)
-            background-color #F5F5F5
-            .titleText
-              font-size rem(32)
-              position absolute
-              left rem(8)
-              top rem(5)
-              color #333
-            .text
-              margin-left rem(-128)
-              font-size rem(24)
-              left rem(8)
-              color #7F7F7F
-            .LisContent
-              zoom 1
-              .LisImgA
-                width rem(150)
-                height rem(150)
-              .LisImgB
-                width rem(150)
-                height rem(150)
 
 </style>

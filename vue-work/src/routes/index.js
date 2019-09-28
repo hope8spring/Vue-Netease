@@ -12,4 +12,5 @@ export default[
   {path:'/Car',component:Car},
   {path:'/Login',component:Login},
   {path:'/',redirect:'/Mister'},
+
 ]
