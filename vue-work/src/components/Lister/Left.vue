@@ -54,11 +54,11 @@
     async mounted(){
       const LeftLists=await axios.get("/categoryList");
       if(LeftLists.data.errno === OK){
-      /*  this.newArr.push(LeftLists.data.category[0]);*/
+        this.newArr.push(LeftLists.data.category[0]);
       /*  this.subCateList.push(this.newArr[0])*/
        /* this.subCateList.push(this.newArr.subCateList)*/
         this.subCateList=this.newArr[0].subCateList;
-        console.log(this.subCateList);
+        console.log(this.newArr[0]);
         this.LeftList=LeftLists.data.category;
       }
     }
