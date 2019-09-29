@@ -14,7 +14,6 @@
       <!--<van-search placeholder="请输入搜索关键词" v-model="value" class="search" ></van-search>-->
       <button class="btn">登录</button>
     </div>
-
   </div>
 </template>
 

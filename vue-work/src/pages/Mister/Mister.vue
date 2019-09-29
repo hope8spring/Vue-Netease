@@ -3,7 +3,15 @@
     <!--首页头部-->
     <headerB></headerB>
     <!--标签页-->
-    <Taber></Taber>
+    <Taber>
+       <div class="icon" slot="showBottom">
+         <span class="back"></span>
+         <van-icon name="arrow-down" class="icon-img"/>
+       </div>
+    <!--  <div slot="showText">
+        <van-button type="default">默认按钮</van-button>
+      </div>-->
+    </Taber>
     <!--轮播图-->
     <van-swipe :autoplay="3000" indicator-color="white" class="swipe-img">
       <van-swipe-item v-for="ban in banData">
@@ -11,17 +19,17 @@
       </van-swipe-item>
     </van-swipe>
     <!-- 小标签页-->
-    <div class="desc">
+    <div class="descIF" v-if="policy.length">
       <div class="inerDesc">
-        <img :src="policy[0].icon"  v-if="policy.length" class="descImg" >
-        <span class="text">{{policy[0].desc}}</span>
+        <img :src="policy[0].icon" class="descImg" >
+        <span class="text" >{{policy[0].desc}}</span>
       </div>
       <div class="inerDesc">
-          <img :src="policy[1].icon" v-if="policy.length" class="descImg">
-         <span class="text">{{policy[1].desc}}</span>
+          <img :src="policy[1].icon" class="descImg">
+         <span class="text" >{{policy[1].desc}}</span>
       </div>
       <div class="inerDesc">
-          <img :src="policy[2].icon" v-if="policy.length" class="descImg">
+          <img :src="policy[2].icon"  class="descImg">
           <span class="text">{{policy[2].desc}}</span>
       </div>
     </div>
@@ -65,7 +73,7 @@
 </template>
 
 <script>
-  import { Search,Swipe, SwipeItem,} from 'vant';
+  import { Search,Swipe, SwipeItem,Icon/*,Button*/} from 'vant';
   import Taber from '../../components/Taber/Tab'
   import Footer from '../../components/Footer/Footer'
   import FreshmanModule from '../../components/Mister/freshmanModule/FreshmanModule.vue'
@@ -81,6 +89,7 @@
         banData:[],
         policy:[],
         slide:[],
+        active:'推荐',
 
       }
    },
@@ -88,6 +97,9 @@
       [Search.name]:Search,
       [Swipe.name]:Swipe,
       [SwipeItem.name]:SwipeItem,
+      [Icon.name]:Icon,
+     /* [Button.name]:Button,*/
+
       Taber,
       Footer,
       FreshmanModule,
@@ -101,6 +113,7 @@
       this.banData =banDataS.data.data;
       const policyS = await axios.get("/policyDescList");
       this.policy=policyS.data.data;
+
     /*  const slideS = await axios.get("/swipeSlide");
       this.slide=slideS.data.data
 */
@@ -125,11 +138,12 @@
           width rem(750)
           height rem(370)
       /*<!-- 小标签页-->*/
-      .desc
+      .descIF
         width rem(750)
         height rem(72)
         display flex
         justify-content center
+
         flex 1
         margin-bottom rem(-20)
         margin-top rem(20)
