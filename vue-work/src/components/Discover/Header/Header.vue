@@ -1,7 +1,7 @@
 <template>
   <div class="Header">
     <div class="head">
-    <van-icon name="wap-home-o" class="wapHome"/>
+    <van-icon name="wap-home-o" class="wapHome"  @click="$router.replace(`/Mister`)"/>
     <div class="textContent">
       <span class="textA">发现</span>
       <span class="textB">甄选家</span>
@@ -33,14 +33,15 @@
   import { Icon } from 'vant';
   export default {
     name: "Header",
+    data(){
+      return{
+        active:'推荐',
+        path:''
+      }
+    },
     components:{
       Taber,
       [Icon.name]:Icon
-    },
-    data(){
-      return{
-        active:'推荐'
-      }
     },
 
   }
