@@ -1,10 +1,11 @@
 <template>
   <div class="longinPhone">
     <div class="content">
-      <div class="phone">请输入手机号</div>
+      <input type="text"  maxlength="11" class="phone" placeholder="请输入手机号" v-model="phone"  name="phone" v-validate="`required|mobile`">
+      <div style="color: red; font-size: 26px" v-show="errors.has('phone')">{{ errors.first('phone') }}</div>
       <div class="borderPx"></div>
-      <div class="verification">
-        <div class="verificationCode">请输入短信验证码</div>
+      <div class="verification" :desable="!isRightPhone">
+        <input type="text" class="verificationCode" placeholder="请输入短信验证码">
         <div class="getCode">获取验证码</div>
       </div>
       <div class="borderPx"></div>
@@ -28,7 +29,21 @@
 
 <script>
   export default {
-    name: "LonginPhone"
+    name: "LonginPhone",
+    data(){
+     return {
+       phone:''
+     }
+    },
+    methods:{
+
+    },
+    computed:{
+      isRightPhone(){
+        return /^1[3456789]\d{9}$/
+
+      }
+    }
   }
 </script>
 
@@ -68,8 +83,14 @@
           color #3c3c3c3
           .getCode
             width rem(200)
-            height rem(200)
-            border rem(1) solid #333
+            border none
+            background-color transparent
+            display inline-block
+            outline none
+            color #3c0500
+            font-size rem(32)
+            &.active
+              color #f01414
       .borderPx
         width rem(700)
         border-1px(#d3d3d3)

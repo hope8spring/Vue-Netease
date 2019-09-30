@@ -1,5 +1,5 @@
 <template>
-  <div class="Banner">
+  <div class="Banner" style="padding-right: 50px">
     <div class="bgBannerNon">
       <img  class="img" src="https://yanxuan.nosdn.127.net/2079bbd71b87befd24070a83f1080e58.jpg?imageView&quality=65&thumbnail=690y376" alt="">    </div>
     <div class="bgBannerTwo">

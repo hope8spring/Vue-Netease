@@ -2,19 +2,19 @@
   <div class="List">
     <van-search placeholder="请输入搜索关键词" v-model="value" class="search"/>
     <div class="borderPX"></div>
-  <van-sidebar v-model="activeKey"  class="navigation">
-    <van-sidebar-item v-for="(Lis,index) in LeftList" :title="Lis.name" @click="to(index)" v-if="LeftList"/>
+  <van-sidebar v-model="activeKey"  class="navigation" >
+    <van-sidebar-item v-for="(Lis,index) in LeftList" :title="Lis.name" @click="to(index)" v-if="LeftList" />
   </van-sidebar>
     <!--右边数据-->
   <div class="RightLister"  v-if="newArr.length">
-      <img  class="RightBgImg"   :src="newArr[0].bannerUrl" alt="" v-if="newArr.length"  >
-      <ul class="RightContent">
-        <li class="Lister" v-for="itmes in newArr[0].subCateList">
-          <img  class="ListerImg" :src="itmes.wapBannerUrl" alt="">
-          <span class="text">{{itmes.name}}</span>
-        </li>
-      </ul>
-    </div>
+    <img  class="RightBgImg"   :src="newArr[0].bannerUrl" alt="" v-if="newArr.length"  >
+    <ul class="RightContent">
+      <li class="Lister" v-for="itmes in newArr[0].subCateList">
+        <img  class="ListerImg" :src="itmes.wapBannerUrl" alt="">
+        <span class="text">{{itmes.name}}</span>
+      </li>
+    </ul>
+  </div>
   <Footer></Footer>
   </div>
 </template>
@@ -52,9 +52,7 @@
       };
     },
     async mounted(){
-
       const LeftLists=await axios.get("/categoryList");
-
       if(LeftLists.data.errno === OK){
         this.newArr.push(LeftLists.data.category[0]);
       /*  this.subCateList.push(this.newArr[0])*/

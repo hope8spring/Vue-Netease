@@ -6,10 +6,8 @@
       </div>
     </HeaderS>
     <phoneContent></phoneContent>
-
   </div>
 </template>
-
 <script>
   import HeaderS from '../../components/Header/Header.vue';
   import phoneContent from '../../components/Login/LoginPhone/LonginPhone.vue';

@@ -6,12 +6,26 @@
           <span class="textB">甄选家</span>
         </div>
     </HeaderS>
-    <van-tabs slot="navTop" class="tabs" swipeable v-model="active" animated sticky title-active-color="#B4282D" >
-          <van-tab  title="推荐" class="tabsB" > <Banner></Banner></van-tab>
+    <van-tabs slot="navTop" class="tabs" swipeable v-model="active" animated sticky title-active-color="#B4282D" style="padding-right: 50px" >
+          <van-tab  title="推荐" class="tabsB" >
+            <Banner></Banner>
+          </van-tab>
           <van-tab title="居家生活" class="tabsB">
             <Banner></Banner>
           </van-tab>
           <van-tab title="服饰鞋包"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="美食酒水"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="美食酒水"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="美食酒水"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="美食酒水"  class="tabsB">
             <Banner></Banner>
           </van-tab>
           <van-tab title="美食酒水"  class="tabsB">

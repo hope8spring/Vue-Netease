@@ -53,7 +53,6 @@
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus.styl"
-
   .LoginIner
     width rem(750)
     height rem(667*2)
