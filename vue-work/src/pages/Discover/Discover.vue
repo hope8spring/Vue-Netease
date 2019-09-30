@@ -1,18 +1,19 @@
 <template>
   <div class="Discover">
    <Hea></Hea>
-   <Banner></Banner>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import Hea from '../../components/Discover/Header/Header.vue';
-  import Banner from '../../components/Discover/Banner/Banner.vue';
+  import Footer from '../../components/Footer/Footer';
   export default {
     name: "Discover",
     components:{
       Hea,
-      Banner
+      Footer
+
     }
   }
 </script>

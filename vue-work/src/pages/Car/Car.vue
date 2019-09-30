@@ -1,10 +1,19 @@
 <template>
-  <div>Car</div>
+  <div>
+    <Carinner></Carinner>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
+  import Carinner from '../../components/Car/Carinner'
+  import Footer from '../../components/Footer/Footer';
   export default {
-    name: "Car"
+    name: "Car",
+    components:{
+      Carinner,
+      Footer
+    }
   }
 </script>
 

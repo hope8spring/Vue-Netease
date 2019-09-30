@@ -1,36 +1,39 @@
 <template>
   <div class="Header">
-    <div class="head">
-    <van-icon name="wap-home-o" class="wapHome"  @click="$router.replace(`/Mister`)"/>
-    <div class="textContent">
-      <span class="textA">发现</span>
-      <span class="textB">甄选家</span>
-    </div>
-    <div class="icon">
-      <van-icon name="search" />
-      <van-icon name="shopping-cart-o" />
-    </div>
-    </div>
-    <div class="borderPX"></div>
-    <Taber>
-        <van-tabs slot="navTop" class="tabs" swipeable v-model="active" animated sticky title-active-color="#B4282D" >
-          <van-tab title="推荐" to="/Mister"  class="tabsB" ></van-tab>
-          <van-tab title="居家生活" to="/Lister" class="tabsB"></van-tab>
-          <van-tab title="服饰鞋包" to="/Discover" class="tabsB"></van-tab>
-          <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
-          <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
-          <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
-          <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
-          <van-tab title="美食酒水" to="/Car" class="tabsB"></van-tab>
-        </van-tabs>
-    </Taber>
+    <HeaderS>
+       <div class="textContent" slot="conTent">
+          <span class="textA">发现</span>
+          <span class="textB">甄选家</span>
+        </div>
+    </HeaderS>
+    <van-tabs slot="navTop" class="tabs" swipeable v-model="active" animated sticky title-active-color="#B4282D" >
+          <van-tab  title="推荐" class="tabsB" > <Banner></Banner></van-tab>
+          <van-tab title="居家生活" class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="服饰鞋包"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="美食酒水"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="美食酒水"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+          <van-tab title="美食酒水"  class="tabsB">
+            <Banner></Banner>
+          </van-tab>
+    </van-tabs>
   </div>
 
 </template>
 
 <script>
-  import Taber from '../../../components/Taber/Tab';
-  import { Icon } from 'vant';
+
+  import Banner from '../../../components/Discover/Banner/Banner.vue';
+  import HeaderS from '../../../components/Header/Header.vue';
+
+  import { Icon,Tabs,Tab} from 'vant';
   export default {
     name: "Header",
     data(){
@@ -40,8 +43,11 @@
       }
     },
     components:{
-      Taber,
-      [Icon.name]:Icon
+      [Icon.name]:Icon,
+      [Tabs.name]:Tabs,
+      [Tab.name]:Tab,
+      Banner,
+      HeaderS
     },
 
   }
@@ -52,29 +58,6 @@
   .Header
     width rem(750)
 
-    .head
-      width rem(750)
-      display flex
-      justify-content space-between
-      .wapHome
-        font-size rem(60)
-        color #7b7b7b
-        margin rem(10)
-     .textContent
-       .textA
-          font-size rem(35)
-          font-weight bold
-          color red
-          margin-right  rem(20)
-       .textB
-          font-size rem(30)
-     .icon
-       display inline-block
-       font-size rem(60)
-       margin rem(10)
-
-  .borderPX
-    border-1px(#7b7b7b)
 
 
 

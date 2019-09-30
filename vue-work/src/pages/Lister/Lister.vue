@@ -1,6 +1,8 @@
 <template>
   <div class="Lister">
     <Left></Left>
+
+
   </div>
 
 </template>

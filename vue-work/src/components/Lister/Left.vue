@@ -52,7 +52,9 @@
       };
     },
     async mounted(){
+
       const LeftLists=await axios.get("/categoryList");
+
       if(LeftLists.data.errno === OK){
         this.newArr.push(LeftLists.data.category[0]);
       /*  this.subCateList.push(this.newArr[0])*/
